@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "numerico"
+version = "0.1.0"
+description = ""
+authors = ["Ranieri Althoff <ranisalt@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "*"
+numpy = "^1.15"
+
+[tool.poetry.dev-dependencies]

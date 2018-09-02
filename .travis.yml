@@ -1,0 +1,5 @@
+language: python
+python:
+    - 3
+install: pip install poetry && poetry install
+script: poetry run python -m doctest t1.py
