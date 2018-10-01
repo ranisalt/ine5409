@@ -22,22 +22,6 @@ def create_matrix(n: int) -> [np.array, np.array]:
     return A, B
 
 
-def optimize(A: np.array, B: np.array) -> np.array:
-    '''
-    >>> A = np.array([[1, -1,  0, 0], \
-                      [1,  1, -1, 0], \
-                      [0,  1, -1, 1], \
-                      [0,  0, -1, 1]], dtype=float)
-    >>> B = np.array([0, 1, 2, -1], dtype=float)
-    >>> optimize(A, B)
-    (array([nan,  1.,  1., -1.]), array([ 1.,  1., -1.,  1.]), array([-1., -1.,  1., nan]), array([ 0.,  1.,  2., -1.]))
-    '''
-    t = np.append([np.nan], A.diagonal(-1))
-    r = A.diagonal(0).copy()
-    d = np.append(A.diagonal(1), [np.nan])
-    return t, r, d, B
-
-
 def residual(A: np.array, B: np.array, X: np.array) -> float:
     return max(abs(sum(A[i, j] * X[j] for j in range(len(X))) - B[i])
                for i in range(len(B)))
